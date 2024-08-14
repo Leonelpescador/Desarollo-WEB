@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trabajo Practico N°2</title>
+    <title>Trabajo Práctico N°2</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
@@ -79,14 +79,50 @@
             background: linear-gradient(135deg, #00b4d8, #0077b6);
             color: #fff;
         }
+        /* Estilos para la ventana modal */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
     <!-- Ejercicio 1 -->
     <header>
-        <h1>Pescador Jesús leonel</h1>
-        <p>Hola tego 27 años y estoy muy alegre de poder mostrales mi Primera Pagina Web.</p>
+        <h1>Pescador Jesús Leonel</h1>
+        <p>Hola, tengo 27 años y estoy muy alegre de poder mostrarles mi primera página web.</p>
     </header>
 
     <!-- Ejercicio 2 -->
@@ -100,21 +136,21 @@
 
     <!-- Ejercicio 3 -->
     <section id="seccion1">
-        <h2>Resumen de Experiencia Academicas/Laborales.</h2>
-        <h3>Mi experiencia academicas son:</h3>
+        <h2>Resumen de Experiencias Académicas/Laborales</h2>
+        <h3>Mi experiencia académica es:</h3>
         <ul>
-            <li>En la carrera de Ingenieria en telecomunicaciones.</li> <p>- En la misma tengo cursado hasta 2°años con algunas materias de 3°año.</p>
-            <li>Tec.Anlista de sistemas.</li> <p>- Actulmente me encuentro cursado el ultimo año de la carrera.</p>
-            <p>Me considero una autodidacta ya que la gran mayori de las cosas que se lo apredi a mi modo y por los metodos no formales.</p>
+            <li>En la carrera de Ingeniería en Telecomunicaciones.</li>
+            <p>- En la misma he cursado hasta 2° año con algunas materias de 3° año.</p>
+            <li>Tec. Analista de Sistemas.</li>
+            <p>- Actualmente me encuentro cursando el último año de la carrera.</p>
+            <p>Me considero autodidacta ya que la gran mayoría de las cosas que sé las aprendí a mi modo y por métodos no formales.</p>
         </ul>
-        <h3>Mi experiencia Laborales son:</h3>
+        <h3>Mi experiencia laboral es:</h3>
         <ul>
-            <li>En la actulidad me desepeño como encargado en el aria de IT de la Clinica CENESA</li> 
-            <li>Trabaje en callCenter ATENTO.</li>
-            <li>Ejercito Argentino - En el escuador de caballeria RAC11.</li>
+            <li>En la actualidad me desempeño como encargado en el área de IT de la Clínica CENESA.</li> 
+            <li>Trabajé en call center ATENTO.</li>
+            <li>Ejército Argentino - En el escuadrón de caballería RAC11.</li>
             <li>Entre otras.</li>
-
-
         </ul>
     </section>
 
@@ -135,93 +171,62 @@
         </form>
     </section>
 
-<!-- Ejercicio 5 -->
-<section id="seccion3">
-    <h2>Artículo</h2>
-    <article>
-        <h3>8 beneficios de aprender programación para tu carrera profesional</h3>
-        <p>Este es un artículo corto sobre un tema de tu elección. Puedes leer más sobre este tema en el siguiente enlace: 
-            <a href="#" id="openModal">8 beneficios de aprender programación para tu carrera profesional</a>.
-        </p>
-        <figure>
-            <img src="ruta/a/tu/imagen.jpg" alt="Descripción de la imagen">
-            <figcaption>Pie de foto para la imagen.</figcaption>
-        </figure>
-    </article>
-</section>
+    <!-- Ejercicio 5 -->
+    <section id="seccion3">
+        <h2>Artículo</h2>
+        <article>
+            <h3>Beneficios de saber Programar. </h3>
+            <p>  Puedes leer más sobre este tema en el siguiente enlace:
+                <a href="#" id="openModal">8 beneficios de aprender programación para tu carrera profesional</a>.
+                
+            </p>
+            <figure>
+                <img src="ruta/a/tu/imagen.jpg" alt="Descripción de la imagen">
+                <figcaption>Pie de foto para la imagen.</figcaption>
+            </figure>
+        </article>
+    </section>
 
-<!-- Modal -->
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close">×</span>
-        <iframe src="https://www.hackaboss.com/blog/beneficios-profesionales-aprender-programacion#:~:text=La%20programaci%C3%B3n%20es%2C%20en%20definitiva,de%20tu%20puesto%20de%20trabajo." width="100%" height="500px"></iframe>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <iframe src="https://www.hackaboss.com/blog/beneficios-profesionales-aprender-programacion#:~:text=La%20programaci%C3%B3n%20es%2C%20en%20definitiva,de%20tu%20puesto%20de%20trabajo." width="100%" height="500px"></iframe>
+        </div>
     </div>
-</div>
-/* Estilos para la ventana modal */
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; 
-    border-radius: 10px;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-// Obtener el modal
-var modal = document.getElementById("myModal");
-
-// Obtener el enlace que abre el modal
-var btn = document.getElementById("openModal");
-
-// Obtener el elemento <span> que cierra el modal
-var span = document.getElementsByClassName("close")[0];
-
-// Cuando el usuario hace clic en el enlace, abre el modal
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// Cuando el usuario hace clic en <span> (x), cierra el modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// Cuando el usuario hace clic en cualquier lugar fuera del modal, cierra el modal
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
 
     <footer>
-        <p>© 2024 Pescador leonel. Todos los derechos reservados.</p>
+        <p>© 2024 Pescador Leonel. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        // Obtener el modal
+        var modal = document.getElementById("myModal");
+
+        // Obtener el enlace que abre el modal
+        var btn = document.getElementById("openModal");
+
+        // Obtener el elemento <span> que cierra el modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // Cuando el usuario hace clic en el enlace, abre el modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Cuando el usuario hace clic en <span> (x), cierra el modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Cuando el usuario hace clic en cualquier lugar fuera del modal, cierra el modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
+
