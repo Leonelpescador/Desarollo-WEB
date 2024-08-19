@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resto Brunette - Caja</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            padding: 15px 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 150px;
+        }
+
+        nav {
+            position: relative;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            background-color: #333;
+            padding: 10px 0;
+            border-radius: 5px;
+            list-style: none;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            margin: 0;
+            padding: 10px 20px;
+        }
+
+        nav ul li ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        .logout-button {
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .main-content {
+            display: none;
+            padding: 50px 0;
+        }
+
+        .logger {
+            background-color: #fff;
+            padding: 20px;
+            max-width: 400px;
+            margin: 100px auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .logger h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logger label {
+            font-weight: 600;
+        }
+
+        .logger input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .logger button {
+            width: 100%;
+            padding: 10px;
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .banner {
+            background: url('banner.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .banner-content {
+            max-width: 600px;
+        }
+
+        .banner h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .banner p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #e67e22;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .redes-sociales a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .user-management, .inactive-users {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            max-width: 600px;
+            margin: 50px auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .user-management h2, .inactive-users h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .user-management label, .inactive-users label {
+            font-weight: 600;
+        }
+
+        .user-management input, .inactive-users input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .user-management button, .inactive-users button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .success-message, .error-message-user, .inactive-success-message, .inactive-error-message {
+            color: green;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .error-message-user, .inactive-error-message {
+            color: red;
+        }
+
+        .user-list, .inactive-user-list {
+            margin-top: 20px;
+        }
+
+        .user-list table, .inactive-user-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .user-list th, .inactive-user-list th, .user-list td, .inactive-user-list td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .user-list th, .inactive-user-list th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logger -->
+    <div class="logger">
+        <h2>Iniciar Sesión</h2>
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" placeholder="Ingrese su usuario" onkeypress="checkEnter(event)">
+        <label for="password">Clave:</label>
+        <input type="password" id="password" placeholder="Ingrese su clave" onkeypress="checkEnter(event)">
+        <button onclick="login()">Ingresar</button>
+        <p id="error-message" class="error-message"></p>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        <!-- Encabezado -->
+        <header>
+            <div class="container">
+                <img src="logo.png" alt="Resto Brunette Logo" class="logo">
+                <nav>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Caja</a>
+                            <ul>
+                                <li><a href="#">Apertura de Caja</a></li>
+                                <li><a href="#">Consulta de Caja</a></li>
+                                <li><a href="#">Cierre de Caja</a></li>
+                            </ul>
+                        </li>
+                        <li id="user-management-menu"><a href="#">Usuarios</a>
+                            <ul>
+                                <li><a href="#" onclick="showUserManagement()">Gestionar Usuarios</a></li>
+                                <li><a href="#" onclick="showInactiveUsers()">Usuarios Inactivos</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="logout-button" onclick="logout()">Cerrar Sesión</button>
+            </div>
+        </header>
+
+        <!-- Banner Principal -->
+        <section id="home" class="banner">
+            <div class="banner-content">
+                <h1>Bienvenidos a Resto Brunette</h1>
+                <p>Disfruta de la mejor gastronomía en un ambiente único.</p>
+                <a href="#apertura-caja" class="btn">Abrir Caja</a>
+            </div>
+        </section>
+
+        <!-- Gestión de Usuarios -->
+        <div class="user-management">
+            <h2>Crear Nuevo Usuario</h2>
+            <label for="new-username">Usuario:</label>
+            <input type="text" id="new-username" placeholder="Ingrese nuevo usuario">
+            <label for="new-password">Clave:</label>
+            <input type="password" id="new-password" placeholder="Ingrese nueva clave">
+            <button onclick="addUser()">Agregar Usuario</button>
+            <p id="success-message" class="success-message"></p>
+            <p id="error-message-user" class="error-message-user"></p>
+
+            <h2>Modificar Clave de Usuario</h2>
+            <label for="mod-username">Usuario:</label>
+            <input type="text" id="mod-username" placeholder="Ingrese usuario para modificar clave">
+            <label for="mod-password">Nueva Clave:</label>
+            <input type="password" id="mod-password" placeholder="Ingrese nueva clave">
+            <button onclick="modifyPassword()">Modificar Clave</button>
+            <p id="mod-success-message" class="success-message"></p>
+            <p id="mod-error-message" class="error-message-user"></p>
+
+            <h2>Lista de Usuarios</h2>
+            <div class="user-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-list-body">
+                        <!-- User list will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Listado de Usuarios Inactivos -->
+        <div class="inactive-users">
+            <h2>Usuarios Inactivos</h2>
+            <div class="inactive-user-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inactive-user-list-body">
+                        <!-- Inactive user list will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de Página -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Resto Brunette. Todos los derechos reservados.</p>
+            <div class="redes-sociales">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/leonelpescador?igsh=MXVxa21kbWV4a3k2ag==" target="https://www.instagram.com/leonelpescador?igsh=MXVxa21kbWV4a3k2ag==">Instagram</a>
+                <a href="#" target="_blank">Twitter</a>
+
+        </div>
+    </footer>
+
+    <script>
+        let loginAttempts = 0;
+        let users = JSON.parse(localStorage.getItem('users')) || { 'admin': 'admin' };
+        let inactiveUsers = JSON.parse(localStorage.getItem('inactiveUsers')) || {};
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (users[username] && users[username] === password) {
+                document.querySelector('.logger').style.display = 'none';
+                document.querySelector('.main-content').style.display = 'block';
+
+                // Mostrar opción de Usuarios solo para admin
+                if (username === 'admin') {
+                    document.querySelector('.user-management').style.display = 'block';
+                    document.querySelector('.inactive-users').style.display = 'block';
+                    populateUserList();
+                    populateInactiveUserList();
+                } else {
+                    document.querySelector('.user-management').style.display = 'none';
+                    document.querySelector('.inactive-users').style.display = 'none';
+                }
+            } else {
+                loginAttempts++;
+                const errorMessage = document.getElementById('error-message');
+                if (loginAttempts >= 5) {
+                    errorMessage.textContent = 'Usuario o clave errónea. Por seguridad se bloqueará el acceso. Para continuar deberá contactar al administrador.';
+                } else {
+                    errorMessage.textContent = 'Usuario o clave incorrecta.';
+                }
+            }
+        }
+
+        function logout() {
+            const confirmLogout = confirm("¿Estás seguro de que quieres cerrar sesión?");
+            if (confirmLogout) {
+                document.querySelector('.main-content').style.display = 'none';
+                document.querySelector('.logger').style.display = 'block';
+                document.getElementById('username').value = '';
+                document.getElementById('password').value = '';
+                document.getElementById('error-message').textContent = '';
+                loginAttempts = 0;
+            }
+        }
+
+        function addUser() {
+            const newUsername = document.getElementById('new-username').value;
+            const newPassword = document.getElementById('new-password').value;
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message-user');
+
+            if (newUsername && newPassword) {
+                if (users[newUsername] || inactiveUsers[newUsername]) {
+                    errorMessage.textContent = 'El usuario ya existe.';
+                    successMessage.textContent = '';
+                } else {
+                    users[newUsername] = newPassword;
+                    localStorage.setItem('users', JSON.stringify(users));
+                    successMessage.textContent = 'Usuario agregado exitosamente.';
+                    errorMessage.textContent = '';
+                    populateUserList();
+                }
+            } else {
+                errorMessage.textContent = 'Por favor, complete todos los campos.';
+                successMessage.textContent = '';
+            }
+        }
+
+        function modifyPassword() {
+            const username = document.getElementById('mod-username').value;
+            const newPassword = document.getElementById('mod-password').value;
+            const successMessage = document.getElementById('mod-success-message');
+            const errorMessage = document.getElementById('mod-error-message');
+
+            if (username && newPassword) {
+                if (users[username]) {
+                    users[username] = newPassword;
+                    localStorage.setItem('users', JSON.stringify(users));
+                    successMessage.textContent = 'Clave modificada exitosamente.';
+                    errorMessage.textContent = '';
+                } else {
+                    errorMessage.textContent = 'El usuario no existe.';
+                    successMessage.textContent = '';
+                }
+            } else {
+                errorMessage.textContent = 'Por favor, complete todos los campos.';
+                successMessage.textContent = '';
+            }
+        }
+
+        function deactivateUser(username) {
+            if (users[username]) {
+                inactiveUsers[username] = users[username];
+                delete users[username];
+                localStorage.setItem('users', JSON.stringify(users));
+                localStorage.setItem('inactiveUsers', JSON.stringify(inactiveUsers));
+                populateUserList();
+                populateInactiveUserList();
+            }
+        }
+
+        function reactivateUser(username) {
+            if (inactiveUsers[username]) {
+                users[username] = inactiveUsers[username];
+                delete inactiveUsers[username];
+                localStorage.setItem('users', JSON.stringify(users));
+                localStorage.setItem('inactiveUsers', JSON.stringify(inactiveUsers));
+                populateUserList();
+                populateInactiveUserList();
+            }
+        }
+
+        function populateUserList() {
+            const userListBody = document.getElementById('user-list-body');
+            userListBody.innerHTML = '';
+            for (const username in users) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${username}</td>
+                    <td><button onclick="deactivateUser('${username}')">Inactivar</button></td>
+                `;
+                userListBody.appendChild(row);
+            }
+        }
+
+        function populateInactiveUserList() {
+            const inactiveUserListBody = document.getElementById('inactive-user-list-body');
+            inactiveUserListBody.innerHTML = '';
+            for (const username in inactiveUsers) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${username}</td>
+                    <td><button onclick="reactivateUser('${username}')">Reactivar</button></td>
+                `;
+                inactiveUserListBody.appendChild(row);
+            }
+        }
+
+        function checkEnter(event) {
+            if (event.key === 'Enter') {
+                login();
+            }
+        }
+
+        function showUserManagement() {
+            document.querySelector('.user-management').style.display = 'block';
+            document.querySelector('.inactive-users').style.display = 'none';
+        }
+
+        function showInactiveUsers() {
+            document.querySelector('.user-management').style.display = 'none';
+            document.querySelector('.inactive-users').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
