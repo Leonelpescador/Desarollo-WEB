@@ -6,7 +6,23 @@
     <title>Trabajo Práctico N°2</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap');
-
+        /* Estilos para el botón de control del audio */
+        .audio-control {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #00b4d800;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            z-index: 1000; 
+        }
+        .audio-control:hover {
+            background-color: #0077b6;
+        }
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -23,7 +39,7 @@
         }
         header {
             text-align: center;
-            background: linear-gradient(135deg, #00b4d8, #0077b6);
+            background: linear-gradient(135deg, #505f63c6, #0077b6);
             color: #fff;
             padding: 20px;
             border-radius: 10px;
@@ -71,18 +87,28 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            background: #1e1e1e;
+            background: #001f3f;
             border-radius: 10px;
+            margin: 20px 0;
         }
+        
         nav ul li {
             margin: 0 10px;
         }
+    
         nav ul li a {
-            color: #00b4d8;
+            color: #ffd700;
             text-decoration: none;
             padding: 10px 20px;
             display: block;
-            transition: background 0.3s, color 0.3s;
+            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+            border-radius: 5px;
+        }
+        
+        nav ul li a:hover {
+            transform: scale(1.1); /* Efecto de zoom */
+            background: #ffd700;
+            color: #000;
         }
         nav ul li a:hover {
             background: #00b4d8;
@@ -165,6 +191,7 @@
             color: #000000e7;
         }
         
+        
     </style>
 </head>
 <body>
@@ -172,7 +199,7 @@
     <!-- Ejercicio 1 -->
     <header>
         <div class="header-content">
-            <img src="imagenes/leonel.png" alt="foto de leonel" title="foto de perfil">
+            <img src="TPN°2\imagenes\leonel.png" alt="foto de leonel" title="foto de perfil">
             <div class="header-text">
                 <h1>MI PRIMERA PAGINA WEB</h1>
                 <p>¡Hola! Soy <strong>Pescador Jesús Leonel</strong>, tengo 27 años y estoy emocionado de compartir contigo mi primera página web.</p>
@@ -182,6 +209,7 @@
         </div>
     </header>
     
+
 
     <!-- Ejercicio 2 -->
     <nav>
@@ -247,6 +275,14 @@
         <!-- Inserta el video de YouTube aquí -->
         <p>También puedes ver este video sobre programación que me parece muy interesante:</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/ELSm-G201Ls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <!-- Agregar el audio de fondo -->
+    <audio id="background-audio" autoplay loop>
+        <source src="TPN°2\Musica\the.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Botón de control del audio -->
+    <button class="audio-control" onclick="toggleAudio()">🔊</button>
     </article>
 </section>
 
@@ -285,6 +321,19 @@
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
+            }
+        }
+        // Función para pausar o reproducir el audio de fondo
+        function toggleAudio() {
+            var audio = document.getElementById("background-audio");
+            var btn = document.querySelector(".audio-control");
+
+            if (audio.paused) {
+                audio.play();
+                btn.textContent = "🔊";
+            } else {
+                audio.pause();
+                btn.textContent = "🔇";
             }
         }
     </script>
