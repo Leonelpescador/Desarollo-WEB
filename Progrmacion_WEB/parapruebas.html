@@ -198,14 +198,7 @@
             </div>
         </div>
     </header>
-    <!-- Agregar el audio de fondo -->
-    <audio id="background-audio" autoplay loop>
-        <source src="https://www.youtube.com/embed/9sYIGt1gOBc?autoplay=1&loop=1&playlist=9sYIGt1gOBc" type="audio/mpeg">
-        Tu navegador no soporta el elemento de audio.
-    </audio>
-
-    <!-- Botón de control del audio -->
-    <button class="audio-control" onclick="toggleAudio()">🔊 Pausar sonido de fondo</button>
+    
 
 
     <!-- Ejercicio 2 -->
@@ -272,6 +265,14 @@
         <!-- Inserta el video de YouTube aquí -->
         <p>También puedes ver este video sobre programación que me parece muy interesante:</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/ELSm-G201Ls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <!-- Agregar el audio de fondo -->
+    <audio id="background-audio" autoplay loop>
+        <source src="TPN°2\Musica\stw.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Botón de control del audio -->
+    <button class="audio-control" onclick="toggleAudio()">🔊</button>
     </article>
 </section>
 
@@ -319,10 +320,10 @@
 
             if (audio.paused) {
                 audio.play();
-                btn.textContent = "🔊 Pausar sonido de fondo";
+                btn.textContent = "🔊";
             } else {
                 audio.pause();
-                btn.textContent = "🔊 Reproducir sonido de fondo";
+                btn.textContent = "🔇";
             }
         }
     </script>
