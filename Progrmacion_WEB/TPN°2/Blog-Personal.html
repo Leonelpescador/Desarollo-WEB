@@ -25,6 +25,46 @@
             text-align: center;
             background: linear-gradient(135deg, #00b4d8, #0077b6);
             color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        header img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 3px solid #fff;
+        }
+        
+        .header-text {
+            max-width: 600px;
+            text-align: left;
+        }
+        
+        header h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+        
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        
+        header {
+            text-align: center;
+            background: linear-gradient(135deg, #00b4d8, #0077b6);
+            color: #fff;
         }
         nav ul {
             list-style-type: none;
@@ -115,15 +155,33 @@
             text-decoration: none;
             cursor: pointer;
         }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+        
+        strong {
+            color: #000000e7;
+        }
+        
     </style>
 </head>
 <body>
 
     <!-- Ejercicio 1 -->
     <header>
-        <h1>Pescador Jesús Leonel</h1>
-        <p>Hola, tengo 27 años y estoy muy alegre de poder mostrarles mi primera página web.</p>
+        <div class="header-content">
+            <img src="imagenes/leonel.png" alt="foto de leonel" title="foto de perfil">
+            <div class="header-text">
+                <h1>MI PRIMERA PAGINA WEB</h1>
+                <p>¡Hola! Soy <strong>Pescador Jesús Leonel</strong>, tengo 27 años y estoy emocionado de compartir contigo mi primera página web.</p>
+                <p>¡Acompáñame en este recorrido por mi mini página web y descubre todo lo que tengo para mostrarte!</p>
+                
+            </div>
+        </div>
     </header>
+    
 
     <!-- Ejercicio 2 -->
     <nav>
@@ -136,22 +194,25 @@
 
     <!-- Ejercicio 3 -->
     <section id="seccion1">
-        <h2>Resumen de Experiencias Académicas/Laborales</h2>
-        <h3>Mi experiencia académica es:</h3>
-        <ul>
-            <li>En la carrera de Ingeniería en Telecomunicaciones.</li>
-            <p>- En la misma he cursado hasta 2° año con algunas materias de 3° año.</p>
-            <li>Tec. Analista de Sistemas.</li>
-            <p>- Actualmente me encuentro cursando el último año de la carrera.</p>
-            <p>Me considero autodidacta ya que la gran mayoría de las cosas que sé las aprendí a mi modo y por métodos no formales.</p>
-        </ul>
-        <h3>Mi experiencia laboral es:</h3>
-        <ul>
-            <li>En la actualidad me desempeño como encargado en el área de IT de la Clínica CENESA.</li> 
-            <li>Trabajé en call center ATENTO.</li>
-            <li>Ejército Argentino - En el escuadrón de caballería RAC11.</li>
-            <li>Entre otras.</li>
-        </ul>
+    <h2 style="color: #00b4d8; text-align: center;">Resumen de Experiencias Académicas y Laborales</h2>
+    
+    <h3 style="color: #e0e0e0;">Formación Académica</h3>
+    <ul style="color: #b0b0b0; line-height: 1.6;">
+        <li>Ingeniería en Telecomunicaciones: Cursado hasta 2º año, con materias de 3º año completadas.</li>
+        <li>Técnico Analista de Sistemas: Actualmente en el último año de la carrera.</li>
+    </ul>
+    <p style="color: #b0b0b0;">Soy autodidacta, y he aprendido gran parte de mis conocimientos a través de métodos no formales y por mi cuenta.</p>
+
+    <h3 style="color: #e0e0e0;">Experiencia Laboral</h3>
+    <ul style="color: #b0b0b0; line-height: 1.6;">
+        <li>Encargado de IT en Clínica CENESA: Responsable de gestionar el área de tecnología en la clínica.</li>
+        <li>Call Center ATENTO: Trabajé en el área de atención al cliente, desarrollando habilidades de comunicación y resolución de problemas.</li>
+        <li>Ejército Argentino: Servicio en el escuadrón de caballería RAC11.</li>
+        <li>Además de otras experiencias laborales variadas.</li>
+    </ul>
+</section>
+
+
     </section>
 
     <!-- Ejercicio 4 -->
@@ -173,25 +234,22 @@
 
     <!-- Ejercicio 5 -->
     <section id="seccion3">
-        <h2>Artículo</h2>
+        <h2>La programación</h2>
         <article>
-            <h3>Beneficios de saber Programar. </h3>
-            <p>  Puedes leer más sobre este tema en el siguiente enlace:
-                <a href="#" id="openModal">8 beneficios de aprender programación para tu carrera profesional</a>.
-                
+            <p>La programación es el proceso de crear un conjunto de instrucciones que le dicen a una computadora como realizar algún tipo de tarea. Pero no solo la acción de escribir un código para que la computadora o el software lo ejecute. Incluye, además, todas las tareas necesarias para que el código funcione correctamente y cumpla el objetivo para el cual se escribió. </p>
+            <p>En la actualidad, la noción de programación se encuentra muy asociada a la creación de aplicaciones de informática y videojuegos. En este sentido, es el proceso por el cual una persona desarrolla un programa, valiéndose de una herramienta que le permita escribir el código (el cual puede estar en uno o varios lenguajes, como C++, Java y Python, entre muchos otros) y de otra que sea capaz de “traducirlo” a lo que se conoce como lenguaje de máquina, que puede "comprender" el microprocesador.</p> 
+            <p>Puedes leer más sobre este tema en el siguiente enlace:
+                <a href="#" id="openModal">https://es.wikipedia.org/wiki/Programaci%C3%B3n</a>.
             </p>
-            <figure>
-                <img src="ruta/a/tu/imagen.jpg" alt="Descripción de la imagen">
-                <figcaption>Pie de foto para la imagen.</figcaption>
-            </figure>
+            <p>si quieres saber de donde apredi todo para hacer esta pagina:<a href="https://www.youtube.com/watch?v=ELSm-G201Ls&pp=ygUIc295ZGFsdG8%3D">haz clik aca.</a></p>
         </article>
     </section>
 
-    <!-- Modal -->
+    <!-- Modal 1-->
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">×</span>
-            <iframe src="https://www.hackaboss.com/blog/beneficios-profesionales-aprender-programacion#:~:text=La%20programaci%C3%B3n%20es%2C%20en%20definitiva,de%20tu%20puesto%20de%20trabajo." width="100%" height="500px"></iframe>
+            <iframe src="https://es.wikipedia.org/wiki/Programaci%C3%B3n#"  width="100%" height="500px"></iframe>
         </div>
     </div>
 
@@ -200,33 +258,32 @@
     </footer>
 
     <script>
-        // Obtener el modal
+        
         var modal = document.getElementById("myModal");
 
-        // Obtener el enlace que abre el modal
+        
         var btn = document.getElementById("openModal");
 
-        // Obtener el elemento <span> que cierra el modal
+        
         var span = document.getElementsByClassName("close")[0];
 
-        // Cuando el usuario hace clic en el enlace, abre el modal
+        
         btn.onclick = function() {
             modal.style.display = "block";
         }
 
-        // Cuando el usuario hace clic en <span> (x), cierra el modal
         span.onclick = function() {
             modal.style.display = "none";
         }
 
-        // Cuando el usuario hace clic en cualquier lugar fuera del modal, cierra el modal
+        
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
+        
     </script>
 
 </body>
 </html>
-
